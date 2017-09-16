@@ -7,7 +7,7 @@ A great way to monitor the level of your keg, temperature, and show details of t
 -
 
 ## Built With
-- Rasberry pi
+- Raspberry pi
 - JavaScript
 - Node.js
 - React Native
