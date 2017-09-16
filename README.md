@@ -18,7 +18,5 @@ A great way to monitor the level of your keg, temperature, and show details of t
 - Tears
 
 ## Mockups
-<img src="assets/Home.png" width="48">
-<img src="assets/Kegs on tap.png" width="160">
-<img src="assets/Keg Status.png" width="2346">
-<img src="assets/Add keg.png" width="27">
+<img src="assets/Home.png" width="160"> <img src="assets/Kegs on tap.png" width="160">
+<img src="assets/Keg Status.png" width="160"> <img src="assets/Add keg.png" width="160">
