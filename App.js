@@ -1,17 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-// import Main from './components/Main'
+
+import React, { Component } from 'react';
+import {StyleSheet, Image} from 'react-native'
+import { Container, Title, Content, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
+import Header from './components/Header';
+import Main from './components/Main'
 // import OnTap from './components/OnTap'
-import KegStatus from './components/KegStatus'
+// import KegStatus from './components/KegStatus'
 
 export default class App extends React.Component {
   render() {
 
     return (
-      <View style={styles.container}>
-      <KegStatus />
-
-      </View>
+      <Container style={styles.container}>
+        <Header />
+        <Main />
+      </Container>
     );
   }
 }

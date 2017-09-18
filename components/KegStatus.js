@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, StatusBar, Image } from 'react-native';
+
 import {
   Container,
   Header,
@@ -21,16 +22,6 @@ export default class KegStatus extends Component {
   render() {
     return (
       <Container>
-
-        <Header>
-          <Left>
-          
-          </Left>
-          <Body>
-            <Title>R PInt</Title>
-          </Body>
-          <Right />
-        </Header>
 
         <Content>
         <Card style={{flex: 1}}>
@@ -71,14 +62,14 @@ export default class KegStatus extends Component {
             <Button>
               <Icon name="home" />
             </Button>
-            <Button>
-              <Icon name="beer" />
-            </Button>
             <Button active>
-              <Icon active name="add" />
+              <Icon active name="beer" />
+            </Button>
+            <Button >
+              <Icon name="add" />
             </Button>
             <Button>
-              <Icon name="person" />
+              <Icon name="contact" />
             </Button>
           </FooterTab>
         </Footer>

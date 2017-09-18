@@ -23,19 +23,7 @@ export default class OnTap extends Component {
     return (
       <Container>
 
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>R PInt</Title>
-          </Body>
-          <Right />
-        </Header>
-
-        <Content>
+        <Content style={styles.container}>
 
           <Card style={{flex: 0, marginTop: 30, marginBottom: 10}}>
             <CardItem>
@@ -43,7 +31,7 @@ export default class OnTap extends Component {
                 <Image
                   source={{uri: 'http://blog.patternbank.com/wp-content/uploads/2012/12/vintage-beer-labels-michigan-all-over-beer-02-700x733.jpg'}}
                   style={{height: 100, width: 100, flex: 1}}/>
-                <Text>
+                <Text style={{marginTop: 10}}>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </Text>
               </Body>
@@ -54,7 +42,7 @@ export default class OnTap extends Component {
             <CardItem>
               <Body>
                 <Image source={{uri: 'http://beerpulse.com/wp-content/uploads/2011/05/5x4-beer-label.png'}} style={{height: 100, width: 100, flex: 1}}/>
-                <Text>
+                <Text style={{marginTop: 10}}>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </Text>
               </Body>
@@ -63,19 +51,19 @@ export default class OnTap extends Component {
 
         </Content>
 
-        <Footer>
+        <Footer >
           <FooterTab>
             <Button>
               <Icon name="home" />
             </Button>
-            <Button>
-              <Icon name="beer" />
+            <Button active>
+              <Icon active name="beer" />
             </Button>
             <Button>
               <Icon active name="add" />
             </Button>
             <Button>
-              <Icon name="person" />
+              <Icon name="contact" />
             </Button>
           </FooterTab>
         </Footer>
