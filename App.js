@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Main from './components/Main'
+// import Main from './components/Main'
 // import OnTap from './components/OnTap'
-// import KegStatus from './components/KegStatus'
+import KegStatus from './components/KegStatus'
 
 export default class App extends React.Component {
   render() {
 
     return (
       <View style={styles.container}>
-      <Main />
+      <KegStatus />
 
       </View>
     );
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
-    backgroundColor: '#000'
+    backgroundColor: 'transparent'
   },
   image: {
     flexGrow:1,

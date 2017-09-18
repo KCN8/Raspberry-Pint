@@ -22,32 +22,29 @@ export default class KegStatus extends Component {
     return (
       <Container>
 
-        <Header style={styles.header}>
-        <StatusBar barStyle='light-content'/>
+        <Header>
           <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
+          
           </Left>
           <Body>
-            <Title style={styles.text}>R PInt</Title>
+            <Title>R PInt</Title>
           </Body>
           <Right />
         </Header>
 
         <Content>
         <Card style={{flex: 1}}>
-          <CardItem style={styles.background}>
+          <CardItem>
             <Left>
               <Thumbnail source={{uri: 'http://blog.patternbank.com/wp-content/uploads/2012/12/vintage-beer-labels-michigan-all-over-beer-02-700x733.jpg'}} />
               <Body>
-                <Text style={styles.text}>Detroit Premium Beer</Text>
-                <Text style={styles.text} note>ABV: 12%</Text>
+                <Text>Detroit Premium Beer</Text>
+                <Text note>ABV: 12%</Text>
               </Body>
             </Left>
           </CardItem>
 
-          <CardItem style={styles.background}>
+          <CardItem>
             <Body>
               <Image
                 source={{uri: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.brewpalacekegbot.com%2Fstatic%2Fimages%2Fkeg%2Ffull%2Fkeg-srm14-3.png&f=1'}}
@@ -58,7 +55,7 @@ export default class KegStatus extends Component {
             </Body>
           </CardItem>
 
-          <CardItem style={styles.background}>
+          <CardItem>
             <Left>
               <Button transparent textStyle={{color: '#87838B'}}>
                 <Icon name="beer" />
@@ -69,7 +66,7 @@ export default class KegStatus extends Component {
         </Card>
         </Content>
 
-        <Footer style={styles.header}>
+        <Footer>
           <FooterTab>
             <Button>
               <Icon name="home" />

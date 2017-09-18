@@ -7,31 +7,34 @@ export default class AnatomyExample extends Component {
   render() {
     return (
       <Container>
-        <Header style={styles.header}>
-        <StatusBar barStyle='light-content'/>
+
+        <Header>
           <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
+            
           </Left>
           <Body>
-            <Title style={styles.text}>R PInt</Title>
+            <Title>R PInt</Title>
           </Body>
           <Right />
         </Header>
+
         <Content>
         <Image
           // source={{uri: 'http://render.fineartamerica.com/images/rendered/search/print/images-medium-5/vintage-beer-keg-patent-drawing-from-1898-aged-pixel.jpg'}}
           source={{uri: 'https://us.123rf.com/450wm/vladayoung/vladayoung1704/vladayoung170400326/75345098-kraft-beer-barrel-logo-vector-vintage-homebrewing-label-sketched-lager-ale-keg-illustration-for-rest.jpg?ver=6'}}
           // source={{uri: 'https://img0.etsystatic.com/207/0/6057601/il_340x270.1291800932_i1qy.jpg'}}
           style={styles.image}>
-            <Text
-              style={styles.paragraph, styles.text}>
-              
+            <Text>
+
             </Text>
         </Image>
         </Content>
-        <Footer style={styles.header}>
+
+        <Button full style={styles.header}>
+            <Text>See whats on TAP!</Text>
+          </Button>
+
+        <Footer>
           <FooterTab>
             <Button>
               <Icon name="home" />
@@ -47,6 +50,7 @@ export default class AnatomyExample extends Component {
             </Button>
           </FooterTab>
         </Footer>
+
       </Container>
     );
   }
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    backgroundColor: 'rgb(188, 17, 66)'
   },
   image: {
     // flexGrow:1,

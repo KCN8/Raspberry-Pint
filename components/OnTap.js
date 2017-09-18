@@ -23,28 +23,27 @@ export default class OnTap extends Component {
     return (
       <Container>
 
-        <Header style={styles.header}>
-        <StatusBar barStyle='light-content'/>
+        <Header>
           <Left>
             <Button transparent>
               <Icon name='menu' />
             </Button>
           </Left>
           <Body>
-            <Title style={styles.text}>R PInt</Title>
+            <Title>R PInt</Title>
           </Body>
           <Right />
         </Header>
 
-        <Content style={styles.container}>
+        <Content>
 
           <Card style={{flex: 0, marginTop: 30, marginBottom: 10}}>
-            <CardItem style={styles.background}>
+            <CardItem>
               <Body>
                 <Image
                   source={{uri: 'http://blog.patternbank.com/wp-content/uploads/2012/12/vintage-beer-labels-michigan-all-over-beer-02-700x733.jpg'}}
                   style={{height: 100, width: 100, flex: 1}}/>
-                <Text style={styles.text2}>
+                <Text>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </Text>
               </Body>
@@ -52,10 +51,10 @@ export default class OnTap extends Component {
             </Card>
 
             <Card style={{flex: 0, marginTop: 10, marginBottom: 10}}>
-            <CardItem style={styles.background}>
+            <CardItem>
               <Body>
                 <Image source={{uri: 'http://beerpulse.com/wp-content/uploads/2011/05/5x4-beer-label.png'}} style={{height: 100, width: 100, flex: 1}}/>
-                <Text style={styles.text2}>
+                <Text>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </Text>
               </Body>
@@ -64,7 +63,7 @@ export default class OnTap extends Component {
 
         </Content>
 
-        <Footer style={styles.header}>
+        <Footer>
           <FooterTab>
             <Button>
               <Icon name="home" />
