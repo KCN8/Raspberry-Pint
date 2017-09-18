@@ -1,12 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Main from './components/Main'
+// import OnTap from './components/OnTap'
+// import KegStatus from './components/KegStatus'
 
 export default class App extends React.Component {
   render() {
+
     return (
       <View style={styles.container}>
-        <Main />
+      <Main />
+
       </View>
     );
   }
@@ -15,8 +19,18 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  }
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    backgroundColor: '#000'
+  },
+  image: {
+    flexGrow:1,
+    height:null,
+    width:null,
+    alignItems: 'center',
+    justifyContent:'center',
+  },
+  paragraph: {
+    textAlign: 'center',
+  },
 });

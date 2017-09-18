@@ -11,16 +11,16 @@ export default (variables = variable) => {
 		".bordered": {
 			".dark": {
 				"NativeBase.Text": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				"NativeBase.Icon": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				"NativeBase.IconNB": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				backgroundColor: "transparent",
-				borderColor: "#000",
+				borderColor: "#ffffff",
 				borderWidth: variables.borderWidth * 2,
 			},
 			".light": {
@@ -136,16 +136,16 @@ export default (variables = variable) => {
 		".dark": {
 			".bordered": {
 				"NativeBase.Text": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				"NativeBase.Icon": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				"NativeBase.IconNB": {
-					color: "#000",
+					color: "#ffffff",
 				},
 			},
-			backgroundColor: "#000",
+			backgroundColor: "#ffffff",
 		},
 		".light": {
 			".transparent": {
@@ -172,13 +172,13 @@ export default (variables = variable) => {
 				},
 			},
 			"NativeBase.Text": {
-				color: "#000",
+				color: "#ffffff",
 			},
 			"NativeBase.Icon": {
-				color: "#000",
+				color: "#ffffff",
 			},
 			"NativeBase.IconNB": {
-				color: "#000",
+				color: "#ffffff",
 			},
 			backgroundColor: "#f4f4f4",
 		},
@@ -293,13 +293,13 @@ export default (variables = variable) => {
 			},
 			".dark": {
 				"NativeBase.Text": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				"NativeBase.IconNB": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				"NativeBase.Icon": {
-					color: "#000",
+					color: "#ffffff",
 				},
 				backgroundColor: null,
 			},
@@ -469,7 +469,7 @@ export default (variables = variable) => {
 		alignSelf: "flex-start",
 		flexDirection: "row",
 		elevation: 2,
-		shadowColor: platformStyle === "material" ? "#000" : undefined,
+		shadowColor: platformStyle === "material" ? "#ffffff" : undefined,
 		shadowOffset: platformStyle === "material" ? { width: 0, height: 2 } : undefined,
 		shadowOpacity: platformStyle === "material" ? 0.2 : undefined,
 		shadowRadius: platformStyle === "material" ? 1.2 : undefined,
