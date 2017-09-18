@@ -24,23 +24,6 @@ export default class AnatomyExample extends Component {
             <Text>See whats on TAP!</Text>
           </Button>
 
-        <Footer>
-          <FooterTab>
-            <Button active>
-              <Icon active name="home" />
-            </Button>
-            <Button>
-              <Icon name="beer" />
-            </Button>
-            <Button>
-              <Icon name="add" />
-            </Button>
-            <Button>
-              <Icon name="contact" />
-            </Button>
-          </FooterTab>
-        </Footer>
-
       </Container>
     );
   }

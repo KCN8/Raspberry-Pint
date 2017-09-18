@@ -1,46 +1,25 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, Image } from 'react-native';
-
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Card,
-  CardItem,
-  Thumbnail,
-  Text,
-  Button,
-  Icon,
-  Footer,
-  FooterTab,
-  Right,
-  Left,
-  Body} from 'native-base';
+import { StyleSheet, Image } from 'react-native';
+import { Container, Header, Footer, FooterTab, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
 
 export default class KegStatus extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
   render() {
     return (
 
         <Content>
-        <Card style={{flex: 1}}>
-          <CardItem>
-            <Left>
-              <Thumbnail source={{uri: 'http://blog.patternbank.com/wp-content/uploads/2012/12/vintage-beer-labels-michigan-all-over-beer-02-700x733.jpg'}} />
-              <Body>
-                <Text>Detroit Premium Beer</Text>
-                <Text note>ABV: 12%</Text>
-              </Body>
-            </Left>
-          </CardItem>
-
+        <Card style={{flex: 0}}>
           <CardItem>
             <Body>
               <Image
-                source={{uri: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.brewpalacekegbot.com%2Fstatic%2Fimages%2Fkeg%2Ffull%2Fkeg-srm14-3.png&f=1'}}
+                source={{ uri: this.props.url }}
                 style={styles.image}/>
-              <Text>
-                //Your text here
+              <Text style={{ marginTop: 10} }>
+                 {this.props.description}
               </Text>
             </Body>
           </CardItem>
@@ -71,10 +50,10 @@ const styles = StyleSheet.create({
   },
   image: {
     // flexGrow:1,
-    height:200,
-    width: 200,
-    marginLeft: 40,
-    marginTop: 20,
+    height:100,
+    width: 100,
+    marginLeft: 0,
+    marginTop: 0,
     // width:null,
   },
   paragraph: {
