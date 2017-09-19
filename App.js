@@ -1,16 +1,12 @@
 
 import React, { Component } from 'react';
 import {StyleSheet, Image} from 'react-native'
-import { Container, Title, Content, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container, Title, Content, FooterTab, Footer, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import beerList from './db/beers';
 import Header from './components/Header';
-// import Main from './components/Main'
+import Main from './components/Main'
 import OnTap from './components/OnTap'
-// import KegStatus from './components/KegStatus'
-// import KegList from './components/KegList'
-// import Form from './components/Form'
-import Footer from './components/Footer'
+import Contact from './components/Contact'
 
 const baseURL = 'http://api.brewerydb.com/v2/beers?key=bc51e892faa1dfdd3217aebd83b27aef'
 const brewsURL = 'https://raspberry-pint-api.herokuapp.com/kegs'
@@ -20,8 +16,12 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      beers: []
+      index: 0, beers: []
      };
+  }
+
+  switchScreen(index){
+    this.setState({ index: index })
   }
 
   async componentDidMount() {
@@ -33,13 +33,37 @@ export default class App extends React.Component {
 
   render() {
 
+    let AppComponent = null;
+
+      if (this.state.index == 0) {
+        AppComponent = <Main />
+      } else if (this.state.index == 1) {
+        AppComponent = <OnTap beers={this.state.beers}/>
+      } else if (this.state.index == 2) {
+        AppComponent = <Contact />
+      }
+
     return (
       <Container style={styles.container}>
         <Header />
-        <OnTap beers={this.state.beers}/>
         {/*<KegStatus />*/}
-        {/*<Form />*/}
-        <Footer />
+        {AppComponent}
+          <Footer>
+            <FooterTab>
+              <Button vertical onPress={() => this.switchScreen(0) }>
+                <Icon name="ios-home" />
+                <Text>Home</Text>
+              </Button>
+              <Button vertical onPress={() => this.switchScreen(1) }>
+                <Icon name="ios-beer" />
+                <Text>Beer</Text>
+              </Button>
+              <Button vertical onPress={() => this.switchScreen(2) }>
+                <Icon active name="ios-contact" />
+                <Text>Contact</Text>
+              </Button>
+            </FooterTab>
+          </Footer>
       </Container>
     );
   }

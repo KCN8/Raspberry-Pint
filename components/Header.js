@@ -8,7 +8,10 @@ export default class Main extends Component {
         <Left>
         </Left>
         <Body>
-          <Image source={require('../assets/logoSmall.png')}/>
+          <Image
+            source={require('../assets/logo.png')}
+            style={{ height: 40, width: 80}}
+            />
         </Body>
         <Right />
       </Header>

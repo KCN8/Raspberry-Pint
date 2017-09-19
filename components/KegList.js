@@ -11,7 +11,7 @@ export default class KegStatus extends Component {
   render() {
     return (
 
-        <Content>
+
         <Card style={{flex: 0}}>
           <CardItem>
             <Left>
@@ -36,14 +36,14 @@ export default class KegStatus extends Component {
 
           <CardItem>
             <Left>
-              <Button transparent textStyle={{color: '#87838B'}}>
+              <Button  textStyle={{color: '#87838B'}} style={{ marginLeft: 55 }}>
                 <Icon name="beer" />
-                <Text>1,926 stars</Text>
+                <Text>Keg Status</Text>
               </Button>
             </Left>
           </CardItem>
         </Card>
-        </Content>
+
 
     );
   }
