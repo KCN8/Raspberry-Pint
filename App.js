@@ -16,7 +16,8 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      index: 0, beers: []
+      index: 0,
+      beers: []
      };
   }
 

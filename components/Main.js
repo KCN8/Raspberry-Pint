@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {StyleSheet, StatusBar, Image} from 'react-native'
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container, Header, Title, Content, Button, Footer, FooterTab, Left, Right, Body, Icon, Text } from 'native-base';
+import ScreenOne from './OnTap'
 
 
 export default class AnatomyExample extends Component {
+
+
   render() {
     return (
       <Container>
@@ -20,7 +23,11 @@ export default class AnatomyExample extends Component {
         </Image>
         </Content>
 
-        <Button full style={styles.header}>
+        <Button
+          full
+          style={styles.header}
+          onPress={this._handlePress}
+          >
             <Text>See whats on TAP!</Text>
           </Button>
 
