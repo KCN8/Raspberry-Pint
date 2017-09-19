@@ -6,20 +6,29 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 import beerList from './db/beers';
 import Header from './components/Header';
 // import Main from './components/Main'
-// import OnTap from './components/OnTap'
+import OnTap from './components/OnTap'
 // import KegStatus from './components/KegStatus'
 // import KegList from './components/KegList'
-import Form from './components/Form'
+// import Form from './components/Form'
 import Footer from './components/Footer'
 
-const baseURL = 'http://api.brewerydb.com/v2/?key=bc51e892faa1dfdd3217aebd83b27aef'
-console.log(baseURL);
+const baseURL = 'http://api.brewerydb.com/v2/beers?key=bc51e892faa1dfdd3217aebd83b27aef'
+const brewsURL = 'https://raspberry-pint-api.herokuapp.com/kegs'
 
 export default class App extends React.Component {
 
   constructor() {
     super()
-    this.state = { beers: beerList };
+    this.state = {
+      beers: []
+     };
+  }
+
+  async componentDidMount() {
+    const response = await fetch(`${baseURL}`)
+    const json = await response.json()
+    this.setState({beers: json.data})
+    console.log(json.data);
   }
 
   render() {
@@ -27,9 +36,9 @@ export default class App extends React.Component {
     return (
       <Container style={styles.container}>
         <Header />
-        {/*<OnTap beers={this.state.beers}/>*/}
+        <OnTap beers={this.state.beers}/>
         {/*<KegStatus />*/}
-        <Form />
+        {/*<Form />*/}
         <Footer />
       </Container>
     );

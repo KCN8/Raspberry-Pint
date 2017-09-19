@@ -22,7 +22,7 @@ export default class OnTap extends Component {
    return (
        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset}>
            {this.props.beers.map(beer => {
-               return(<KegList key={beer.id} url={beer.url} description={beer.description}/>);
+               return(<KegList key={beer.id} abv={beer.abv} name={beer.name} description={beer.description}/>);
            })}
        </Content>
    );

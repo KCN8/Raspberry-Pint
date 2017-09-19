@@ -24,16 +24,16 @@ export default class inputForm extends Component {
                 <Input />
             </Item>
 
-            <Card>
-              <CardItem style={{height: 150, width: null, flex: 1}}>
+            {/*<Card>
+              <CardItem style={{height: 100, width: null, flex: 1}}>
                 <Thumbnail
                   source={{uri: 'http://blog.patternbank.com/wp-content/uploads/2012/12/vintage-beer-labels-michigan-all-over-beer-02-700x733.jpg'}}
                   style={{height: 100, width: 100}}/>
               </CardItem>
-            </Card>
+            </Card>*/}
 
 
-            <Button iconLeft bordered style={{ marginLeft: 5}}>
+            <Button iconLeft bordered style={{ marginLeft: 100, marginTop: 10}}>
               <Icon name='pint' />
               <Text>Submit</Text>
             </Button>

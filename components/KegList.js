@@ -14,6 +14,16 @@ export default class KegStatus extends Component {
         <Content>
         <Card style={{flex: 0}}>
           <CardItem>
+            <Left>
+
+              <Body>
+                <Text>{this.props.name}</Text>
+                <Text note>ABV: {this.props.abv}</Text>
+              </Body>
+            </Left>
+          </CardItem>
+
+          <CardItem>
             <Body>
               <Image
                 source={{ uri: this.props.url }}
