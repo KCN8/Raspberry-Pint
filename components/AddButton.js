@@ -2,15 +2,18 @@
 import React, { Component } from 'react';
 import { Image, ScrollView, StyleSheet, Modal, Text, TouchableHighlight, View } from 'react-native';
 import { Content, Fab, Icon, Button, Item, Input, Picker, Form, Right } from 'native-base';
-import { Alert } from 'react-native';
+import { Alert, TextInput } from 'react-native';
 
 export default class AddButton extends Component {
   constructor(props){
     super(props)
     this.state = {
       modalVisible: false,
-      selected1: undefined
-
+      selected1: undefined,
+      name: '',
+      description: '',
+      servingtemp: '',
+      photo: ''
     }
   }
 
@@ -25,19 +28,25 @@ export default class AddButton extends Component {
   }
 
   postBeer() {
-
-    // fetch('https://raspberry-pint-api.herokuapp.com/beers', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     name: '',
-    //     description: '',
-    //     serving_temp: '',
-    //   })
-    // })
+    const body = {
+      name: this.state.name,
+      description: this.state.description,
+      servingtemp: this.state.servingtemp,
+      photo: this.state.photo
+    }
+    fetch('https://raspberry-pint-api.herokuapp.com/beers', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: body.name,
+        description: body.description,
+        serving_temp: body.servingtemp,
+        photo: body.photo
+      })
+    })
   }
 
 
@@ -55,23 +64,38 @@ export default class AddButton extends Component {
           <View>
             <Item>
               <Icon active name='ios-beer' />
-              <Input placeholder='Name'
-              value=''/>
+              <TextInput
+                style={{height: 40}}
+                placeholder="Name"
+                onChangeText={(name) => this.setState({name})}
+              />
             </Item>
             <Item>
               <Icon active name='ios-beer' />
-              <Input placeholder='Company'
-              value=''/>
+              <TextInput
+                style={{height: 40}}
+                placeholder="Description"
+                onChangeText={(description) => this.setState({description})}
+                value={this.state.description}
+              />
             </Item>
             <Item>
               <Icon active name='ios-beer' />
-              <Input placeholder='Serving Temp'
-              value=''/>
+              <TextInput
+                style={{height: 40}}
+                placeholder="Serving Temp"
+                onChangeText={(servingtemp) => this.setState({servingtemp})}
+                value={this.state.servingtemp}
+              />
             </Item>
             <Item>
               <Icon active name='ios-beer' />
-              <Input placeholder='Photo URL'
-              value=''/>
+              <TextInput
+                style={{height: 40}}
+                placeholder="Photo URL"
+                onChangeText={(photo) => this.setState({photo})}
+                value={this.state.photo}
+              />
             </Item>
 
 
@@ -84,7 +108,7 @@ export default class AddButton extends Component {
             </Button>
 
             <Right>
-              <Button textStyle={{color: '#87838B'}} style={{ marginLeft: 55, marginTop: -45 }} onPress={this.postBeer} >
+              <Button textStyle={{color: '#87838B'}} style={{ marginLeft: 55, marginTop: -45 }} onPress={() => this.postBeer()} >
                 <Text>Submit</Text>
               </Button>
             </Right>
