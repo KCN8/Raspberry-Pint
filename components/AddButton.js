@@ -6,10 +6,14 @@ import { Alert } from 'react-native';
 
 export default class AddButton extends Component {
 
-  state = {
-    modalVisible: false,
-    selected1: "key1"
+  constructor(props){
+    super(props)
+    this.state = {
+      modalVisible: false,
+      selected1: undefined,
+      beers:props.beers
 
+    }
   }
 
   setModalVisible(visible) {
@@ -40,15 +44,16 @@ export default class AddButton extends Component {
           <Form>
             <Picker
               iosHeader="Select one"
+              placeholder="Select one"
               mode="dropdown"
+              headerBackButtonText="Baaack!"
               selectedValue={this.state.selected1}
               onValueChange={this.onValueChange.bind(this)}
             >
-              <Item label="Wallet" value="key0" />
-              <Item label="ATM Card" value="key1" />
-              <Item label="Debit Card" value="key2" />
-              <Item label="Credit Card" value="key3" />
-              <Item label="Net Banking" value="key4" />
+            {this.props.beers.map(beer =>{
+              return <Item key={beer.id} label={beer.name} value={beer.id} />
+            })
+            }
             </Picker>
           </Form>
             <Item>
