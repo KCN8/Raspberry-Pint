@@ -63,7 +63,7 @@ export default class KegInfo extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BeerNavigator style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}/>
+        <BeerNavigator style={{ width: Dimensions.get('window').width }}/>
       </View>
     );
   }
@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
   },
   image: {
     // flexGrow:1,
-    height:100,
-    width: 100,
+    height: '100%',
+    width: '100%',
     marginLeft: 0,
     marginTop: 0,
     // width:null,
