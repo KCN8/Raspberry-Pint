@@ -21,6 +21,7 @@ import {
 export default class KegStatus extends Component {
   render() {
     return (
+      <Container>
 
         <Content>
         <Card style={{flex: 1}}>
@@ -62,7 +63,7 @@ export default class KegStatus extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
   },

@@ -28,12 +28,15 @@ export default class App extends React.Component {
     const response = await fetch(`${brewsURL}/beers`)
     const json = await response.json()
     this.setState({beers: json.data})
-    console.log(json.data);
-  }
+
+    Expo.Font.loadAsync({
+    'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
+  });
+}
 
   render() {
 
-    let AppComponent = null;
+    let AppComponent = 0;
 
       if (this.state.index == 0) {
         AppComponent = <Main />
@@ -70,19 +73,6 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    backgroundColor: 'transparent'
-  },
-  image: {
-    flexGrow:1,
-    height:null,
-    width:null,
-    alignItems: 'center',
-    justifyContent:'center',
-  },
-  paragraph: {
-    textAlign: 'center',
+    backgroundColor: '#04172d'
   },
 });
