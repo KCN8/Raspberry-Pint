@@ -8,8 +8,7 @@ import Main from './components/Main'
 import OnTap from './components/OnTap'
 import Contact from './components/Contact'
 
-const baseURL = 'http://api.brewerydb.com/v2/beers?key=bc51e892faa1dfdd3217aebd83b27aef'
-const brewsURL = 'https://raspberry-pint-api.herokuapp.com/kegs'
+const brewsURL = 'https://raspberry-pint-api.herokuapp.com'
 
 export default class App extends React.Component {
 
@@ -26,7 +25,7 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(`${baseURL}`)
+    const response = await fetch(`${brewsURL}/beers`)
     const json = await response.json()
     this.setState({beers: json.data})
     console.log(json.data);

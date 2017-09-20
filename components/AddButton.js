@@ -8,7 +8,7 @@ export default class AddButton extends Component {
 
   state = {
     modalVisible: false,
-    selected1: "key1"
+    selected1: undefined
 
   }
 
@@ -44,11 +44,7 @@ export default class AddButton extends Component {
               selectedValue={this.state.selected1}
               onValueChange={this.onValueChange.bind(this)}
             >
-              <Item label="Wallet" value="key0" />
-              <Item label="ATM Card" value="key1" />
-              <Item label="Debit Card" value="key2" />
-              <Item label="Credit Card" value="key3" />
-              <Item label="Net Banking" value="key4" />
+              <Item label={this.beer.name} value="key0" />
             </Picker>
           </Form>
             <Item>

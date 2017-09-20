@@ -30,7 +30,7 @@ export default class OnTap extends Component {
                return(<KegList key={beer.id} abv={beer.abv} name={beer.name} description={beer.description}/>);
            })}
        </Content>
-      <AddButton />
+      <AddButton beers={this.props.beers}/>
     </Container>
    );
  }
