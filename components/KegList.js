@@ -41,7 +41,7 @@ class KegList extends Component {
 
         <CardItem>
           <Left>
-            <Button style={{ marginLeft: 55, backgroundColor: '#3B5998'}} onPress={() => navigate('KegStatus')}>
+            <Button style={{ marginLeft: 55, backgroundColor: '#3B5998'}} onPress={() => this.props.switchScreen(3)}>
               <Icon name="beer" />
               <Text>Keg Status</Text>
             </Button>
@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
   },
   image: {
     // flexGrow:1,
-    height: '100%',
-    width: '100%',
+    height: 0,
+    width: 0,
     marginLeft: 0,
     marginTop: 0,
     // width:null,

@@ -10,8 +10,7 @@ import Contact from './components/Contact'
 import Bubbles from './components/Bubbles'
 import Expo from 'expo';
 
-const baseURL = 'http://api.brewerydb.com/v2/beers?key=bc51e892faa1dfdd3217aebd83b27aef'
-const brewsURL = 'https://raspberry-pint-api.herokuapp.com/kegs'
+const brewsURL = 'https://raspberry-pint-api.herokuapp.com'
 
 export default class App extends React.Component {
 
@@ -28,9 +27,9 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(`${baseURL}`)
+    const response = await fetch(`${brewsURL}/beers`)
     const json = await response.json()
-    this.setState({beers: json.data})
+    this.setState({beers: json})
 
     await Expo.Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
@@ -49,6 +48,8 @@ export default class App extends React.Component {
         AppComponent = <OnTap beers={this.state.beers}/>
       } else if (this.state.index == 2) {
         AppComponent = <Contact />
+      } else if (this.state.index == 3) {
+        AppComponent = <KegStatus />
       }
 
     return (

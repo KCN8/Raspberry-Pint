@@ -10,7 +10,8 @@ export default class OnTap extends Component {
   constructor(props){
    super(props);
    this.state = {
-     active: false
+     active: false,
+     beers: props.beers
    }
  }
 
@@ -27,10 +28,10 @@ export default class OnTap extends Component {
      <Container>
        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset}>
            {this.props.beers.map(beer => {
-               return(<KegList key={beer.id} abv={beer.abv} name={beer.name} description={beer.description}/>);
+               return(<KegList key={beer.id} name={beer.name} description={beer.description} servingTemp={beer.serving_temp}/>);
            })}
        </Content>
-      <AddButton />
+      <AddButton beers={this.props.beers}/>
     </Container>
    );
  }
