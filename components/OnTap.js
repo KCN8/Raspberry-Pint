@@ -10,7 +10,8 @@ export default class OnTap extends Component {
   constructor(props){
    super(props);
    this.state = {
-     active: false
+     active: false,
+     beers: props.beers
    }
  }
 

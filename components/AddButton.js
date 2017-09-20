@@ -8,17 +8,25 @@ export default class AddButton extends Component {
   constructor(props){
     super(props)
     this.state = {
-      modalVisible: false,
+      addKegNewBeerModal: false,
+      addKegExistingBeerModal: false,
       selected1: undefined,
       name: '',
       description: '',
       servingtemp: '',
-      photo: ''
+      photo: '',
+      beers:props.beers,
+      active: false
     }
   }
 
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
+  setAddKegNewBeerModalTrue() {
+    this.setState({addKegNewBeerModal: true});
+  }
+
+
+  setAddKegExistingBeerModalTrue() {
+    this.setState({addKegExistingBeerModal: true});
   }
 
   onValueChange(value: string) {
@@ -57,11 +65,13 @@ export default class AddButton extends Component {
         <Modal
           animationType="slide"
           transparent={false}
-          visible={this.state.modalVisible}
+          visible={this.state.addKegNewBeerModal}
           onRequestClose={() => {alert("Modal has been closed.")}}
           >
          <View style={{marginTop: 22}}>
           <View>
+          <Form>
+
             <Item>
               <Icon active name='ios-beer' />
               <TextInput
@@ -97,30 +107,83 @@ export default class AddButton extends Component {
                 value={this.state.photo}
               />
             </Item>
+          </Form>
 
-
-            <Button textStyle={{color: '#87838B'}} style={{ marginLeft: 55, marginTop: 55 }} >
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}>
-              <Text>Close</Text>
-              </TouchableHighlight>
+            <Button onPress={() => {
+              this.setState({ addKegNewBeerModal: !this.state.addKegNewBeerModal })
+            }} style={{ backgroundColor: '#3B5998', paddingLeft: 20, paddingRight: 20, marginTop: 100, alignSelf: "center" }}>
+              <Text style={{color: 'white', textAlign: 'center'}}>Close</Text>
             </Button>
 
-            <Right>
-              <Button textStyle={{color: '#87838B'}} style={{ marginLeft: 55, marginTop: -45 }} onPress={() => this.postBeer()} >
-                <Text>Submit</Text>
+
+
+              <Button onPress={() => this.postBeer()} style={{ backgroundColor: '#3B5998', paddingLeft: 20, paddingRight: 20, marginTop: 10, alignSelf: "center" }}>
+                <Text style={{color: 'white', textAlign: 'center'}}>Submit</Text>
               </Button>
-            </Right>
+
 
           </View>
          </View>
         </Modal>
-        <Button style={{ backgroundColor: '#3B5998',borderRadius: 50, position: 'absolute', right: 25,bottom: 25}} onPress={() => {
-          this.setModalVisible(true)
-        }}>
-          <Icon name="ios-add" />
-        </Button>
+
+
+
+
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.addKegExistingBeerModal}
+          onRequestClose={() => {alert("Modal has been closed.")}}
+          >
+         <View style={{marginTop: 22}}>
+          <View>
+          <Form>
+
+            <Picker
+            iosHeader="Select one"
+            placeholder="Select one"
+            mode="dropdown"
+            headerBackButtonText="Baaack!"
+            selectedValue={this.state.selected1}
+            onValueChange={this.onValueChange.bind(this)}
+          >
+          {this.props.beers.map(beer =>{
+            return <Item key={beer.id} label={beer.name} value={beer.id} />
+          })
+          }
+          </Picker>
+
+          </Form>
+
+            <Button onPress={() => {
+              this.setState({ addKegExistingBeerModal: !this.state.addKegExistingBeerModal })
+            }} style={{ backgroundColor: '#3B5998', paddingLeft: 20, paddingRight: 20, marginTop: 100, alignSelf: "center" }}>
+              <Text style={{color: 'white', textAlign: 'center'}}>Close</Text>
+            </Button>
+
+          </View>
+         </View>
+        </Modal>
+
+
+
+
+        <Fab
+            active={this.state.active}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#5067FF' }}
+            position="bottomRight"
+            onPress={() => this.setState({ active: !this.state.active })}>
+            <Icon name="ios-add" />
+            <Button style={{ backgroundColor: '#34A34F', width: 200, marginLeft: -160}} onPress={() => this.setAddKegExistingBeerModalTrue()}>
+              <Text style={{color: 'white'}}> Add Keg With Existing Beer</Text>
+            </Button>
+            <Button style={{ backgroundColor: '#3B5998', width: 200, marginLeft: -160}} onPress={() => this.setAddKegNewBeerModalTrue()}>
+              <Text style={{color: 'white'}}> Add Keg With New Beer</Text>
+            </Button>
+
+          </Fab>
 
       </View>
     );
