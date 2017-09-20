@@ -1,35 +1,32 @@
 import React, { Component } from 'react';
-import {StyleSheet, StatusBar, Image} from 'react-native'
-import { Container, Header, Title, Content, Button, Footer, FooterTab, Left, Right, Body, Icon, Text } from 'native-base';
-import ScreenOne from './OnTap'
+import * as Animatable from 'react-native-animatable';
+import {StyleSheet, Navigator, StatusBar, Image} from 'react-native'
+import { Container, Header, Title, Content, View, Button, Footer, FooterTab, Left, Right, Body, Icon, Text } from 'native-base';
+
 
 
 export default class AnatomyExample extends Component {
 
+  constructor(props) {
+    super(props);
+  }
 
   render() {
+
     return (
       <Container>
 
         <Content>
         <Image
           source={{uri: 'http://render.fineartamerica.com/images/rendered/search/print/images-medium-5/vintage-beer-keg-patent-drawing-from-1898-aged-pixel.jpg'}}
-          // source={{uri: 'https://us.123rf.com/450wm/vladayoung/vladayoung1704/vladayoung170400326/75345098-kraft-beer-barrel-logo-vector-vintage-homebrewing-label-sketched-lager-ale-keg-illustration-for-rest.jpg?ver=6'}}
-          // source={{uri: 'https://img0.etsystatic.com/207/0/6057601/il_340x270.1291800932_i1qy.jpg'}}
           style={styles.image}>
-            <Text>
 
-            </Text>
         </Image>
-        </Content>
-
-        <Button
-          full
-          style={styles.header}
-          onPress={this._handlePress}
-          >
-            <Text>See whats on TAP!</Text>
-          </Button>
+          <View>
+          <Animatable.Text animation="slideInDown" easing="ease-out" iterationCount="infinite" direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 50, marginTop: -70}}>👇🏼</Animatable.Text>
+            <Animatable.Text animation="pulse" easing="ease-out" iterationCount='infinite' direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 16, marginTop: -90}}>▽ See Whats on TAP! ▽</Animatable.Text>
+          </View>
+          </Content>
 
       </Container>
     );
@@ -38,17 +35,17 @@ export default class AnatomyExample extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
   },
   header: {
-    backgroundColor: 'rgb(188, 17, 66)'
+    backgroundColor: '#bb1142'
   },
   image: {
-    // flexGrow:1,
-    height:500,
-    // width:null,
+    flexGrow:1,
+    height:450,
+    width:null,
     alignItems: 'center',
     justifyContent:'center',
   },
@@ -56,6 +53,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   text: {
-    color: '#ffffff'
+    color: '#000'
   }
 });

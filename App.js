@@ -47,7 +47,6 @@ export default class App extends React.Component {
     return (
       <Container style={styles.container}>
         <Header />
-        {/*<KegStatus />*/}
         {AppComponent}
           <Footer>
             <FooterTab>
