@@ -1,15 +1,17 @@
 
 import React, { Component } from 'react';
 import { Image, ScrollView, StyleSheet, Modal, Text, TouchableHighlight, View } from 'react-native';
-import { Content, Fab, Icon, Button, Item, Input, Picker, Form } from 'native-base';
+import { Content, Fab, Icon, Button, Item, Input, Picker, Form, Right } from 'native-base';
 import { Alert } from 'react-native';
 
 export default class AddButton extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      modalVisible: false,
+      selected1: undefined
 
-  state = {
-    modalVisible: false,
-    selected1: undefined
-
+    }
   }
 
   setModalVisible(visible) {
@@ -22,6 +24,24 @@ export default class AddButton extends Component {
     });
   }
 
+  postBeer() {
+
+    // fetch('https://raspberry-pint-api.herokuapp.com/beers', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     name: '',
+    //     description: '',
+    //     serving_temp: '',
+    //   })
+    // })
+  }
+
+
+
   render() {
     return (
       <View style={{marginTop: 22}}>
@@ -33,38 +53,41 @@ export default class AddButton extends Component {
           >
          <View style={{marginTop: 22}}>
           <View>
-          <Image
-             source={{url:'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/1098353_643347905675898_2102289501_n.jpg?oh=7878ae0cf00260c748acd4953a3036fc&oe=5A1270BE'}}
-             style={{ flex: 1, height: 24, width: 24, resizeMode: 'cover' }}
-          />
-          <Form>
-            <Picker
-              iosHeader="Select one"
-              mode="dropdown"
-              selectedValue={this.state.selected1}
-              onValueChange={this.onValueChange.bind(this)}
-            >
-              <Item label={this.beer.name} value="key0" />
-            </Picker>
-          </Form>
             <Item>
-              <Icon active name='home' />
-              <Input placeholder='Name'/>
+              <Icon active name='ios-beer' />
+              <Input placeholder='Name'
+              value=''/>
             </Item>
             <Item>
-              <Icon active name='ios-nuclear' />
-              <Input placeholder='Company'/>
+              <Icon active name='ios-beer' />
+              <Input placeholder='Company'
+              value=''/>
             </Item>
             <Item>
-              <Icon active name='ios-umbrella' />
-              <Input placeholder='URL'/>
+              <Icon active name='ios-beer' />
+              <Input placeholder='Serving Temp'
+              value=''/>
+            </Item>
+            <Item>
+              <Icon active name='ios-beer' />
+              <Input placeholder='Photo URL'
+              value=''/>
             </Item>
 
+
+            <Button textStyle={{color: '#87838B'}} style={{ marginLeft: 55, marginTop: 55 }} >
             <TouchableHighlight onPress={() => {
               this.setModalVisible(!this.state.modalVisible)
             }}>
               <Text>Close</Text>
-            </TouchableHighlight>
+              </TouchableHighlight>
+            </Button>
+
+            <Right>
+              <Button textStyle={{color: '#87838B'}} style={{ marginLeft: 55, marginTop: -45 }} onPress={this.postBeer} >
+                <Text>Submit</Text>
+              </Button>
+            </Right>
 
           </View>
          </View>
@@ -79,3 +102,30 @@ export default class AddButton extends Component {
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+  },
+  header: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  },
+  image: {
+    // flexGrow:1,
+    height:100,
+    width: 100,
+    marginLeft: 0,
+    marginTop: 0,
+    // width:null,
+  },
+  paragraph: {
+    textAlign: 'center',
+  },
+  text: {
+    color: '#ffffff'
+  },
+  background: {
+    backgroundColor: '#000'
+  }
+});

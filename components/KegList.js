@@ -18,7 +18,7 @@ export default class KegStatus extends Component {
 
               <Body>
                 <Text>{this.props.name}</Text>
-                <Text note>ABV: {this.props.abv}</Text>
+                <Text note>Sering Temp: {this.props.serving_temp}</Text>
               </Body>
             </Left>
           </CardItem>

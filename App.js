@@ -27,7 +27,7 @@ export default class App extends React.Component {
   async componentDidMount() {
     const response = await fetch(`${brewsURL}/beers`)
     const json = await response.json()
-    this.setState({beers: json.data})
+    this.setState({beers: json})
 
     Expo.Font.loadAsync({
     'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
