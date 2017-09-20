@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { connectStyle } from 'native-base';
+import * as Animatable from 'react-native-animatable';
+import {StyleSheet, Image} from 'react-native'
+import { Container, Title, Content, View, Button, Footer, FooterTab, Left, Right, Body, Icon, Text } from 'native-base';
 
-class CustomComponent extends Component {
+
+
+export default class AnatomyExample extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    // connect styles to props.style defined by the theme
-    const styles = this.props.style;
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.textContent}>
-          Your Component with static style
-        </Text>
-      </View>
+        <Content>
+          <Animatable.Text animation="slideInDown" easing="ease-out" iterationCount="infinite" direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 50, paddingTop: 525}}>👇🏼</Animatable.Text>
+          <Animatable.Text animation="pulse" easing="ease-out" iterationCount='infinite' direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 16, }}>▽ See Whats on TAP! ▽</Animatable.Text>
+        </Content>
     );
   }
 }
-const styles = {
-  container: {
+
+
+const styles = StyleSheet.create({
+  contain: {
     flex: 1,
-    backgroundColor: '#c9cccc',
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    resizeMode: 'contain',
   },
-  textContent: {
-    fontSize: 20,
-    color: 'black',
-  },
-};
-// connect the component to the theme
-export default connectStyle('../native-base-theme/Variable/material', styles)(CustomComponent);
+});

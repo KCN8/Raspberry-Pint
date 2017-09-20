@@ -11,6 +11,18 @@ export default (variables = variable) => {
 		".bordered": {
 			".dark": {
 				"NativeBase.Text": {
+<<<<<<< HEAD
+					color: "#ffffff",
+				},
+				"NativeBase.Icon": {
+					color: "#ffffff",
+				},
+				"NativeBase.IconNB": {
+					color: "#ffffff",
+				},
+				backgroundColor: "transparent",
+				borderColor: "#ffffff",
+=======
 					color: "#000",
 				},
 				"NativeBase.Icon": {
@@ -21,6 +33,7 @@ export default (variables = variable) => {
 				},
 				backgroundColor: "transparent",
 				borderColor: "#000",
+>>>>>>> 9c4a7e966b1f98f286ccaa5f322cd22c47dbdfee
 				borderWidth: variables.borderWidth * 2,
 			},
 			".light": {
@@ -136,6 +149,18 @@ export default (variables = variable) => {
 		".dark": {
 			".bordered": {
 				"NativeBase.Text": {
+<<<<<<< HEAD
+					color: "#ffffff",
+				},
+				"NativeBase.Icon": {
+					color: "#ffffff",
+				},
+				"NativeBase.IconNB": {
+					color: "#ffffff",
+				},
+			},
+			backgroundColor: "#ffffff",
+=======
 					color: "#000",
 				},
 				"NativeBase.Icon": {
@@ -146,6 +171,7 @@ export default (variables = variable) => {
 				},
 			},
 			backgroundColor: "#000",
+>>>>>>> 9c4a7e966b1f98f286ccaa5f322cd22c47dbdfee
 		},
 		".light": {
 			".transparent": {
@@ -172,6 +198,15 @@ export default (variables = variable) => {
 				},
 			},
 			"NativeBase.Text": {
+<<<<<<< HEAD
+				color: "#ffffff",
+			},
+			"NativeBase.Icon": {
+				color: "#ffffff",
+			},
+			"NativeBase.IconNB": {
+				color: "#ffffff",
+=======
 				color: "#000",
 			},
 			"NativeBase.Icon": {
@@ -179,6 +214,7 @@ export default (variables = variable) => {
 			},
 			"NativeBase.IconNB": {
 				color: "#000",
+>>>>>>> 9c4a7e966b1f98f286ccaa5f322cd22c47dbdfee
 			},
 			backgroundColor: "#f4f4f4",
 		},
@@ -293,6 +329,15 @@ export default (variables = variable) => {
 			},
 			".dark": {
 				"NativeBase.Text": {
+<<<<<<< HEAD
+					color: "#ffffff",
+				},
+				"NativeBase.IconNB": {
+					color: "#ffffff",
+				},
+				"NativeBase.Icon": {
+					color: "#ffffff",
+=======
 					color: "#000",
 				},
 				"NativeBase.IconNB": {
@@ -300,6 +345,7 @@ export default (variables = variable) => {
 				},
 				"NativeBase.Icon": {
 					color: "#000",
+>>>>>>> 9c4a7e966b1f98f286ccaa5f322cd22c47dbdfee
 				},
 				backgroundColor: null,
 			},
@@ -469,7 +515,11 @@ export default (variables = variable) => {
 		alignSelf: "flex-start",
 		flexDirection: "row",
 		elevation: 2,
+<<<<<<< HEAD
+		shadowColor: platformStyle === "material" ? "#ffffff" : undefined,
+=======
 		shadowColor: platformStyle === "material" ? "#000" : undefined,
+>>>>>>> 9c4a7e966b1f98f286ccaa5f322cd22c47dbdfee
 		shadowOffset: platformStyle === "material" ? { width: 0, height: 2 } : undefined,
 		shadowOpacity: platformStyle === "material" ? 0.2 : undefined,
 		shadowRadius: platformStyle === "material" ? 1.2 : undefined,
