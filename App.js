@@ -8,8 +8,7 @@ import Main from './components/Main'
 import OnTap from './components/OnTap'
 import Contact from './components/Contact'
 
-const baseURL = 'http://api.brewerydb.com/v2/beers?key=bc51e892faa1dfdd3217aebd83b27aef'
-const brewsURL = 'https://raspberry-pint-api.herokuapp.com/kegs'
+const brewsURL = 'https://raspberry-pint-api.herokuapp.com'
 
 export default class App extends React.Component {
 
@@ -26,15 +25,18 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(`${baseURL}`)
+    const response = await fetch(`${brewsURL}/beers`)
     const json = await response.json()
-    this.setState({beers: json.data})
-    console.log(json.data);
-  }
+    this.setState({beers: json})
+
+    Expo.Font.loadAsync({
+    'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
+  });
+}
 
   render() {
 
-    let AppComponent = null;
+    let AppComponent = 0;
 
       if (this.state.index == 0) {
         AppComponent = <Main />
@@ -47,7 +49,6 @@ export default class App extends React.Component {
     return (
       <Container style={styles.container}>
         <Header />
-        {/*<KegStatus />*/}
         {AppComponent}
           <Footer>
             <FooterTab>
@@ -72,19 +73,6 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    backgroundColor: 'transparent'
-  },
-  image: {
-    flexGrow:1,
-    height:null,
-    width:null,
-    alignItems: 'center',
-    justifyContent:'center',
-  },
-  paragraph: {
-    textAlign: 'center',
+    backgroundColor: '#04172d'
   },
 });
