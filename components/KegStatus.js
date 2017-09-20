@@ -46,16 +46,17 @@ export default class KegStatus extends Component {
             </Body>
           </CardItem>
 
-          <CardItem>
-            <Left>
-              <Button transparent textStyle={{color: '#87838B'}}>
-                <Icon name="beer" />
-                <Text>1,926 stars</Text>
-              </Button>
-            </Left>
-          </CardItem>
-        </Card>
+            <CardItem>
+              <Left>
+                <Button transparent textStyle={{color: '#87838B'}}>
+                  <Icon name="beer" />
+                  <Text>1,926 stars</Text>
+                </Button>
+              </Left>
+            </CardItem>
+          </Card>
         </Content>
+      </Container>
 
     );
   }
@@ -63,28 +64,15 @@ export default class KegStatus extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
   },
-  header: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
-  },
   image: {
-    // flexGrow:1,
+
     height:200,
     width: 200,
     marginLeft: 40,
     marginTop: 20,
-    // width:null,
-  },
-  paragraph: {
-    textAlign: 'center',
-  },
-  text: {
-    color: '#ffffff'
-  },
-  background: {
-    backgroundColor: '#000'
   }
 });
