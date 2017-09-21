@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { StyleSheet, Image } from 'react-native';
 import { Container, Header, Footer, FooterTab, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Right, Body } from 'native-base';
 
@@ -33,10 +34,47 @@ export default class KegStatus extends Component {
                 <Text>liters Used: {this.props.litersUsed}</Text>
 
                 <Text>Keg Temp: {this.props.kegTemp}</Text>
+=======
+import { StyleSheet, Image, View, Item, Modal, TouchableHighlight } from 'react-native';
+import { Container, Header, Footer, FooterTab, Content, Form, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
+import KegStatus from './KegStatus'
+
+
+export default class KegList extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      modalVisible: false,
+      modaleVisibleFalse: false,
+    };
+  }
+
+    setModalVisible(visible) {
+      this.setState({modalVisible: visible});
+    }
+
+    setModalVisibieFalse() {
+      this.setState({modaleVisibleFalse: true});
+    }
+
+    render() {
+      return (
+
+      <View>
+        <Card style={{flex: 0}}>
+          <CardItem>
+            <Left>
+
+              <Body>
+                <Text>{this.props.name}</Text>
+                <Text note>Sering Temp: {this.props.serving_temp}</Text>
+>>>>>>> a1c09aad907af089eb538d100afb660ffc57c188
               </Body>
             </Left>
           </CardItem>
 
+<<<<<<< HEAD
 
 
           <CardItem>
@@ -56,13 +94,54 @@ export default class KegStatus extends Component {
         </Card>
 
 
+=======
+          <CardItem>
+            <Body>
+              <Image
+                source={{ uri: this.props.url }}
+                style={styles.image}/>
+              <Text style={{ marginTop: 10} }>
+                 {this.props.description}
+              </Text>
+            </Body>
+          </CardItem>
+
+          <CardItem>
+            <Left>
+              <Button  textStyle={{color: '#87838B'}} style={{ marginLeft: 5 }} onPress={() => this.setModalVisible(true) }>
+                <Icon name="beer" />
+                <Text>Keg Status</Text>
+              </Button>
+            </Left>
+          </CardItem>
+          </Card>
+
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {alert("Modal has been closed.")}}
+          >
+          <TouchableHighlight style={{ marginTop: 30, marginLeft: 10}} onPress={() => {
+            this.setModalVisible(!this.state.modalVisible)
+          }}>
+          <Text style={{ fontSize: 20}}>✕</Text>
+          </TouchableHighlight>
+            <KegStatus />
+          </Modal>
+        </View>
+>>>>>>> a1c09aad907af089eb538d100afb660ffc57c188
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+<<<<<<< HEAD
     // flex: 1,
+=======
+    flex: 1,
+>>>>>>> a1c09aad907af089eb538d100afb660ffc57c188
     alignItems: 'stretch',
     justifyContent: 'center',
   },

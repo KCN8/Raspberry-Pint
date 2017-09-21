@@ -21,7 +21,6 @@ import {
 export default class KegStatus extends Component {
   render() {
     return (
-      <Container>
 
         <Content>
         <Card style={{flex: 1}}>
@@ -56,7 +55,7 @@ export default class KegStatus extends Component {
             </CardItem>
           </Card>
         </Content>
-      </Container>
+
 
     );
   }

@@ -1,18 +1,17 @@
-
 import React, { Component } from 'react';
-import {StyleSheet, Image} from 'react-native'
+import {StyleSheet, Image, View} from 'react-native'
 import { Container, Title, Content, FooterTab, Footer, Button, Left, Right, Body, Icon, Text } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import Header from './components/Header';
 import Main from './components/Main'
 import OnTap from './components/OnTap'
 import Contact from './components/Contact'
-import Bubbles from './components/Bubbles'
+import KegList from './components/KegList'
 import Expo from 'expo';
 
 const brewsURL = 'https://raspberry-pint-api.herokuapp.com'
 
-export default class App extends React.Component {
+export default class App extends Component {
 
   constructor() {
     super()
@@ -52,8 +51,6 @@ export default class App extends React.Component {
         AppComponent = <OnTap beers={this.state.beers}/>
       } else if (this.state.index == 2) {
         AppComponent = <Contact />
-      } else if (this.state.index == 3) {
-        AppComponent = <KegStatus />
       }
 
     return (
@@ -83,6 +80,6 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#04172d'
+    backgroundColor: '#d4ab1d'
   },
 });

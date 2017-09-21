@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image } from 'react-native';
-import { Container, View, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
-import KegList from './KegList'
+import { StyleSheet, Image, View } from 'react-native';
+import { Container, Header, Footer, FooterTab, Content, Card, Modal, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
+import KegList  from './KegList'
 import AddButton from './AddButton'
 const baseURL = 'https://raspberry-pint-api.herokuapp.com'
 
