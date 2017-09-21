@@ -20,6 +20,7 @@ export default class AnatomyExample extends Component {
           <Bubbles />
           <Animatable.Text animation="slideInDown" easing="ease-out" iterationCount="infinite" direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 50, marginTop: -90}}>👇🏼</Animatable.Text>
           <Animatable.Text animation="pulse" easing="ease-out" iterationCount='infinite' direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 16, }}>▽ See Whats on TAP! ▽</Animatable.Text>
+
         </Content>
     );
   }

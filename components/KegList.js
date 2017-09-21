@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image, View, Item, Modal, TouchableHighlight } from 'react-native';
-import { Container, Header, Footer, FooterTab, Content, Form, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
+import { Container, Header, Footer, FooterTab, Content, Form, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Right, Body } from 'native-base';
 import KegStatus from './KegStatus'
 
 
@@ -26,37 +26,49 @@ export default class KegList extends Component {
       return (
 
       <View>
-        <Card style={{flex: 0}}>
-          <CardItem>
-            <Left>
+      <Card style={{flex: 0}}>
+        <CardItem>
+          <Left>
 
-              <Body>
-                <Text>{this.props.name}</Text>
-                <Text note>Sering Temp: {this.props.serving_temp}</Text>
-              </Body>
-            </Left>
-          </CardItem>
-
-          <CardItem>
             <Body>
+              <Text style={{fontSize: 20, textAlign: 'center'}}>Keg {this.props.KegID}</Text>
+              <Text style={{fontSize: 26, textAlign: 'center'}}>{this.props.beerName}</Text>
+              <Text style={{textAlign: 'center', marginBottom: 20}}>Suggested Serving Temp: {this.props.servingTemp}</Text>
               <Image
-                source={{ uri: this.props.url }}
-                style={styles.image}/>
-              <Text style={{ marginTop: 10} }>
-                 {this.props.description}
-              </Text>
-            </Body>
-          </CardItem>
+                style={{width: 100, height: 100}}
+                source={{uri: this.props.beerPhoto}}
+              />
 
-          <CardItem>
-            <Left>
-              <Button  textStyle={{color: '#87838B'}} style={{ marginLeft: 5 }} onPress={() => this.setModalVisible(true) }>
-                <Icon name="beer" />
-                <Text>Keg Status</Text>
-              </Button>
-            </Left>
-          </CardItem>
-          </Card>
+
+
+              <Text style={{marginTop: 25, marginBottom: 20}}>{this.props.BeerDescription}</Text>
+
+              <Text>KegSizeLiters: {this.props.KegSizeLiters}</Text>
+              <Text>litersUsed: {this.props.litersUsed}</Text>
+
+              <Text>kegTemp: {this.props.kegTemp}</Text>
+            </Body>
+          </Left>
+        </CardItem>
+
+
+
+        <CardItem>
+          <Left>
+            <Button style={{ width: 130, marginLeft: 20, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}>
+              <Icon style={{ marginLeft: 10}} name="beer" />
+              <Text style={{ marginLeft: -20}} >Delete Keg</Text>
+            </Button>
+          </Left>
+          <Right>
+            <Button  style={{ width: 130, backgroundColor: '#34A34F', marginLeft: 0, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}
+              onPress={() => this.setModalVisible(true) }>
+              <Icon style={{ marginLeft: 10}} name="beer" />
+              <Text style={{ marginLeft: -20}}>Keg Status</Text>
+            </Button>
+          </Right>
+        </CardItem>
+      </Card>
 
         <Modal
           animationType="slide"
