@@ -1,70 +1,77 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, Dimensions, View } from 'react-native';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-import { StackNavigator } from 'react-navigation'
-import { Container, Header, Footer, FooterTab, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
-import KegStatus from './KegStatus';
+import { StyleSheet, Image, View, Item, Modal, TouchableHighlight } from 'react-native';
+import { Container, Header, Footer, FooterTab, Content, Form, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
+import KegStatus from './KegStatus'
 
-class KegList extends Component {
+
+export default class KegList extends Component {
 
   constructor(props){
     super(props)
+    this.state = {
+      modalVisible: false,
+      modaleVisibleFalse: false,
+    };
   }
 
+    setModalVisible(visible) {
+      this.setState({modalVisible: visible});
+    }
 
-  render() {
-    const { navigate } = this.props.navigation;
+    setModalVisibieFalse() {
+      this.setState({modaleVisibleFalse: true});
+    }
 
-    return (
+    render() {
+      return (
 
-      <Card style={{flex: 0}}>
-        <CardItem>
-          <Left>
+      <View>
+        <Card style={{flex: 0}}>
+          <CardItem>
+            <Left>
 
+              <Body>
+                <Text>{this.props.name}</Text>
+                <Text note>Sering Temp: {this.props.serving_temp}</Text>
+              </Body>
+            </Left>
+          </CardItem>
+
+          <CardItem>
             <Body>
-              <Text>{this.props.name}</Text>
-              <Text note>ABV: {this.props.abv}</Text>
+              <Image
+                source={{ uri: this.props.url }}
+                style={styles.image}/>
+              <Text style={{ marginTop: 10} }>
+                 {this.props.description}
+              </Text>
             </Body>
-          </Left>
-        </CardItem>
+          </CardItem>
 
-        <CardItem>
-          <Body>
-            <Image
-              source={{ uri: this.props.url }}
-              style={styles.image}/>
-            <Text style={{ marginTop: 10} }>
-               {this.props.description}
-            </Text>
-          </Body>
-        </CardItem>
+          <CardItem>
+            <Left>
+              <Button  textStyle={{color: '#87838B'}} style={{ marginLeft: 5 }} onPress={() => this.setModalVisible(true) }>
+                <Icon name="beer" />
+                <Text>Keg Status</Text>
+              </Button>
+            </Left>
+          </CardItem>
+          </Card>
 
-        <CardItem>
-          <Left>
-            <Button style={{ marginLeft: 55, backgroundColor: '#3B5998'}} onPress={() => this.props.switchScreen(3)}>
-              <Icon name="beer" />
-              <Text>Keg Status</Text>
-            </Button>
-          </Left>
-        </CardItem>
-      </Card>
-    );
-  }
-}
-
-const BeerNavigator = StackNavigator(
-  {
-    KegList: { screen: KegList },
-    KegStatus: { screen: KegStatus}
-  }
-);
-
-export default class KegInfo extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <BeerNavigator style={{ width: Dimensions.get('window').width }}/>
-      </View>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {alert("Modal has been closed.")}}
+          >
+          <TouchableHighlight style={{ marginTop: 30, marginLeft: 10}} onPress={() => {
+            this.setModalVisible(!this.state.modalVisible)
+          }}>
+          <Text style={{ fontSize: 20}}>✕</Text>
+          </TouchableHighlight>
+            <KegStatus />
+          </Modal>
+        </View>
     );
   }
 }
@@ -72,14 +79,16 @@ export default class KegInfo extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
+  },
+  header: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   image: {
     // flexGrow:1,
-    height: 0,
-    width: 0,
+    height:100,
+    width: 100,
     marginLeft: 0,
     marginTop: 0,
     // width:null,
