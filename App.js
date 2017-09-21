@@ -16,7 +16,8 @@ export default class App extends React.Component {
     super()
     this.state = {
       index: 0,
-      beers: []
+      beers: [],
+
      };
   }
 
@@ -25,14 +26,18 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(`${brewsURL}/beers`)
-    const json = await response.json()
-    this.setState({beers: json})
+    const beerResponse = await fetch(`${brewsURL}/beers`)
+    const beerJSON = await beerResponse.json()
+    this.setState({beers: beerJSON})
+
+
 
     Expo.Font.loadAsync({
     'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
   });
 }
+
+
 
   render() {
 
@@ -58,11 +63,11 @@ export default class App extends React.Component {
               </Button>
               <Button vertical onPress={() => this.switchScreen(1) }>
                 <Icon name="ios-beer" />
-                <Text>My Kegs</Text>
+                <Text>My Keg(s)</Text>
               </Button>
               <Button vertical onPress={() => this.switchScreen(2) }>
                 <Icon active name="ios-contact" />
-                <Text>Contact</Text>
+                <Text>Info</Text>
               </Button>
             </FooterTab>
           </Footer>

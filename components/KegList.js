@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image } from 'react-native';
-import { Container, Header, Footer, FooterTab, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
+import { Container, Header, Footer, FooterTab, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Right, Body } from 'native-base';
 
 export default class KegStatus extends Component {
 
@@ -18,7 +18,8 @@ export default class KegStatus extends Component {
 
               <Body>
                 <Text>{this.props.name}</Text>
-                <Text note>Sering Temp: {this.props.serving_temp}</Text>
+                <Text note>Sering Temp: {this.props.servingTemp}</Text>
+                <Text note>Beer Description: {this.props.BeerDescription}</Text>
               </Body>
             </Left>
           </CardItem>
@@ -28,19 +29,23 @@ export default class KegStatus extends Component {
               <Image
                 source={{ uri: this.props.url }}
                 style={styles.image}/>
-              <Text style={{ marginTop: 10} }>
-                 {this.props.description}
-              </Text>
+
             </Body>
           </CardItem>
 
           <CardItem>
             <Left>
-              <Button  textStyle={{color: '#87838B'}} style={{ marginLeft: 55 }}>
+              <Button style={{ marginLeft: 20,}} textStyle={{color: '#87838B'}}>
                 <Icon name="beer" />
-                <Text>Keg Status</Text>
+                <Text>Replenish Keg</Text>
               </Button>
             </Left>
+            <Right>
+              <Button  style={{ backgroundColor: '#34A34F', marginLeft: 0, }} textStyle={{color: '#87838B'}}>
+                <Icon name="beer" />
+                <Text>Change Keg</Text>
+              </Button>
+            </Right>
           </CardItem>
         </Card>
 
