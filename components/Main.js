@@ -15,8 +15,10 @@ export default class AnatomyExample extends Component {
 
     return (
         <Content>
-          <Animatable.Text animation="slideInDown" easing="ease-out" iterationCount="infinite" direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 50, paddingTop: 525}}>👇🏼</Animatable.Text>
+            <Text style={{ textAlign: 'center', color: 'gray', fontSize: 30, paddingTop: 300}}>Kegorator Monitor</Text>
+          <Animatable.Text animation="slideInDown" easing="ease-out" iterationCount="infinite" direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 50, paddingTop: 180}}>👇🏼</Animatable.Text>
           <Animatable.Text animation="pulse" easing="ease-out" iterationCount='infinite' direction="alternate" style={{ textAlign: 'center', color: 'white', fontSize: 16, }}>▽ See Whats on TAP! ▽</Animatable.Text>
+
         </Content>
     );
   }
