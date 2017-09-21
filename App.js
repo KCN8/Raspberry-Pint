@@ -58,7 +58,7 @@ export default class App extends React.Component {
               </Button>
               <Button vertical onPress={() => this.switchScreen(1) }>
                 <Icon name="ios-beer" />
-                <Text>Beer</Text>
+                <Text>My Kegs</Text>
               </Button>
               <Button vertical onPress={() => this.switchScreen(2) }>
                 <Icon active name="ios-contact" />
