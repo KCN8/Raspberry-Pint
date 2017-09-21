@@ -11,8 +11,8 @@ export default class AddButton extends Component {
     this.state = {
       modalVisible: false,
       selected1: undefined,
-      beers:props.beers
-
+      beers:props.beers,
+      active: false
     }
   }
 
@@ -78,11 +78,23 @@ export default class AddButton extends Component {
           </View>
          </View>
         </Modal>
-        <Button style={{ backgroundColor: '#3B5998',borderRadius: 50, position: 'absolute', right: 25,bottom: 25}} onPress={() => {
-          this.setModalVisible(true)
-        }}>
-          <Icon name="ios-add" />
-        </Button>
+        <Fab
+           active={this.state.active}
+           direction="up"
+           containerStyle={{ }}
+           style={{ backgroundColor: '#5067FF' }}
+           position="bottomRight"
+           onPress={() => this.setState({ active: !this.state.active })}>
+           <Icon name="share" />
+           <Button style={{ backgroundColor: '#34A34F' }} onPress={() => {
+             this.setModalVisible(true)
+           }}>
+             <Icon name="logo-whatsapp" />
+           </Button>
+           <Button style={{ backgroundColor: '#3B5998' }}>
+             <Icon name="logo-facebook" />
+           </Button>
+         </Fab>
 
       </View>
     );
