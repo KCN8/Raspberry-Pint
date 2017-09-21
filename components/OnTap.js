@@ -15,8 +15,6 @@ const baseURL = 'https://raspberry-pint-api.herokuapp.com'
    }
  }
 
-
-
    async componentDidMount(){
      const kegAndBeerResponse = await fetch(`${baseURL}/keg-and-beer`)
      const kegAndBeerJSON  = await kegAndBeerResponse.json()
