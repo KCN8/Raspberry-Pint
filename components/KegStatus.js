@@ -39,9 +39,9 @@ export default class KegStatus extends Component {
               <Image
                 source={{uri: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.brewpalacekegbot.com%2Fstatic%2Fimages%2Fkeg%2Ffull%2Fkeg-srm14-3.png&f=1'}}
                 style={styles.image}/>
-              <Text>
-                //Your text here
-              </Text>
+                <Text>KegSizeLiters: {this.props.KegSizeLiters}</Text>
+                <Text>litersUsed: {this.props.litersUsed}</Text>
+                <Text>kegTemp: {this.props.kegTemp}</Text>
             </Body>
           </CardItem>
 

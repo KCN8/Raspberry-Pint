@@ -38,15 +38,7 @@ export default class KegList extends Component {
                 style={{width: 100, height: 100}}
                 source={{uri: this.props.beerPhoto}}
               />
-
-
-
               <Text style={{marginTop: 25, marginBottom: 20}}>{this.props.BeerDescription}</Text>
-
-              <Text>KegSizeLiters: {this.props.KegSizeLiters}</Text>
-              <Text>litersUsed: {this.props.litersUsed}</Text>
-
-              <Text>kegTemp: {this.props.kegTemp}</Text>
             </Body>
           </Left>
         </CardItem>
@@ -55,7 +47,8 @@ export default class KegList extends Component {
 
         <CardItem>
           <Left>
-            <Button style={{ width: 130, marginLeft: 20, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}>
+            <Button style={{ width: 130, marginLeft: 20, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}
+              onPress={(id) => this.props.deleteKeg(this.props.KegID)}>
               <Icon style={{ marginLeft: 10}} name="beer" />
               <Text style={{ marginLeft: -20}} >Delete Keg</Text>
             </Button>
@@ -90,7 +83,7 @@ export default class KegList extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
   },
