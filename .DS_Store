@@ -5,6 +5,28 @@ class KegList extends Component {
   }
 
 
+////
+const BeerNavigator = StackNavigator(
+  {
+    KegList: { screen: KegList },
+    KegStatus: { screen: KegStatus}
+  }
+);
+
+export default class KegInfo extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <BeerNavigator style={{ width: Dimensions.get('window').width }}/>
+      </View>
+    );
+  }
+}
+
+  <Button style={{ backgroundColor: 'red'}} onPress={this.props.onPress}>.....
+
+onPress={() => navigate('KegStatus')} asdsad
+
   render() {
     const { navigate } = this.props.navigation;
 
