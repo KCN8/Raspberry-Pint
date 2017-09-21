@@ -8,19 +8,6 @@ export default class KegStatus extends Component {
     super(props);
   }
 
-  deleteKeg(id) {
-    fetch('https://raspberry-pint-api.herokuapp.com/kegs-by-id/' + id, {
-      method: 'DELETE',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: this.props.KegID
-      })
-    })
-  }
-
   render() {
     return (
 
@@ -54,7 +41,7 @@ export default class KegStatus extends Component {
 
           <CardItem>
             <Left>
-              <Button style={{ marginLeft: 20, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}} onPress={(id) => this.deleteKeg(this.props.KegID)}>
+              <Button style={{ marginLeft: 20, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}} onPress={(id) => this.props.deleteKeg(this.props.KegID)}>
                 <Icon name="beer" />
                 <Text>Delete Keg</Text>
               </Button>
