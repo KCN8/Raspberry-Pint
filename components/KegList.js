@@ -37,24 +37,17 @@ export default class KegStatus extends Component {
             </Left>
           </CardItem>
 
-          <CardItem>
-            <Body>
-              <Image
-                source={{ uri: this.props.url }}
-                style={styles.image}/>
 
-            </Body>
-          </CardItem>
 
           <CardItem>
             <Left>
-              <Button style={{ marginLeft: 20,}} textStyle={{color: '#87838B'}}>
+              <Button style={{ marginLeft: 20, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}>
                 <Icon name="beer" />
-                <Text>Replenish Keg</Text>
+                <Text>Delete Keg</Text>
               </Button>
             </Left>
             <Right>
-              <Button  style={{ backgroundColor: '#34A34F', marginLeft: 0, }} textStyle={{color: '#87838B'}}>
+              <Button  style={{ backgroundColor: '#34A34F', marginLeft: 0, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}>
                 <Icon name="beer" />
                 <Text>Change Keg</Text>
               </Button>
