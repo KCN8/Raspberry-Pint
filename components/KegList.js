@@ -17,9 +17,22 @@ export default class KegStatus extends Component {
             <Left>
 
               <Body>
-                <Text>{this.props.name}</Text>
-                <Text note>Sering Temp: {this.props.servingTemp}</Text>
-                <Text note>Beer Description: {this.props.BeerDescription}</Text>
+                <Text style={{fontSize: 20, textAlign: 'center'}}>Keg {this.props.KegID}</Text>
+                <Text style={{fontSize: 26, textAlign: 'center'}}>{this.props.beerName}</Text>
+                <Text style={{textAlign: 'center', marginBottom: 20}}>Suggested Serving Temp: {this.props.servingTemp}</Text>
+                <Image
+                  style={{width: 100, height: 100}}
+                  source={{uri: this.props.beerPhoto}}
+                />
+
+
+
+                <Text style={{marginTop: 25, marginBottom: 20}}>{this.props.BeerDescription}</Text>
+
+                <Text>KegSizeLiters: {this.props.KegSizeLiters}</Text>
+                <Text>litersUsed: {this.props.litersUsed}</Text>
+
+                <Text>kegTemp: {this.props.kegTemp}</Text>
               </Body>
             </Left>
           </CardItem>

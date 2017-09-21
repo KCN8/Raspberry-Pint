@@ -37,7 +37,7 @@ const baseURL = 'https://raspberry-pint-api.herokuapp.com'
      <Container>
        <Content scrollEventThrottle={300} onScroll={this.setCurrentReadOffset}>
            {this.state.kegAndBeer.map(kegWithItsBeer => {
-               return(<KegList key={kegWithItsBeer.id} KegID={kegWithItsBeer.id} BeerDescription={kegWithItsBeer.description} name={kegWithItsBeer.name}  servingTemp={kegWithItsBeer.serving_temp}/>);
+               return(<KegList key={kegWithItsBeer.id} BeerID={kegWithItsBeer.beer_id} BeerDescription={kegWithItsBeer.description} KegID={kegWithItsBeer.id} KegSizeLiters={kegWithItsBeer.keg_size_liters} litersUsed={kegWithItsBeer.liters_used} beerName={kegWithItsBeer.name} beerPhoto={kegWithItsBeer.photo}  servingTemp={kegWithItsBeer.serving_temp}  kegTemp={kegWithItsBeer.kegTemp}/>);
            })}
        </Content>
       <AddButton beers={this.props.beers}/>
