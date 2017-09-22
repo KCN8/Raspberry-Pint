@@ -27,6 +27,10 @@ A mobile app that monitors the level of your keg, temperature, and will show det
 - Sweat
 - Tears
 
+## Screenshots
+<img src="assets/Home_page.png" width="160"> <img src="assets/Kegs.png" width="160">
+<img src="assets/Keg_stats.png" width="160"> <img src="assets/Contact.png" width="160">
+
 ## Mockups
 <img src="assets/Home.png" width="160"> <img src="assets/Kegs on tap.png" width="160">
 <img src="assets/Keg Status.png" width="160"> <img src="assets/Add keg.png" width="160">

@@ -28,7 +28,7 @@ export default class KegStatus extends Component {
             <Left>
               <Thumbnail source={{uri: 'http://blog.patternbank.com/wp-content/uploads/2012/12/vintage-beer-labels-michigan-all-over-beer-02-700x733.jpg'}} />
               <Body>
-                <Text>Detroit Premium Beer</Text>
+                <Text>Mojo IPA</Text>
                 <Text note>ABV: 12%</Text>
               </Body>
             </Left>
@@ -40,7 +40,8 @@ export default class KegStatus extends Component {
                 source={{uri: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.brewpalacekegbot.com%2Fstatic%2Fimages%2Fkeg%2Ffull%2Fkeg-srm14-3.png&f=1'}}
                 style={styles.image}/>
               <Text>
-                //Your text here
+              Pints Remaining: 124
+              Temperature: 48
               </Text>
             </Body>
           </CardItem>
