@@ -1,61 +1,52 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, Image } from 'react-native';
-
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Card,
-  CardItem,
-  Thumbnail,
-  Text,
-  Button,
-  Icon,
-  Footer,
-  FooterTab,
-  Right,
-  Left,
-  Body} from 'native-base';
+import { StyleSheet, Image } from 'react-native';
+import { Container, Header, Footer, FooterTab, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Right, Body } from 'native-base';
 
 export default class KegStatus extends Component {
   render() {
     return (
-      <Container>
-
-        <Content>
-        <Card style={{flex: 1}}>
+        <Card style={{flex: 0}}>
           <CardItem>
             <Left>
-              <Thumbnail source={{uri: 'http://blog.patternbank.com/wp-content/uploads/2012/12/vintage-beer-labels-michigan-all-over-beer-02-700x733.jpg'}} />
+
               <Body>
-                <Text>Detroit Premium Beer</Text>
-                <Text note>ABV: 12%</Text>
+                <Text style={{fontSize: 20, textAlign: 'center'}}>Keg {this.props.KegID}</Text>
+                <Text style={{fontSize: 26, textAlign: 'center'}}>{this.props.beerName}</Text>
+                <Text style={{textAlign: 'center', marginBottom: 20}}>Suggested Serving Temp: {this.props.servingTemp}</Text>
+                <Image
+                  style={{width: 100, height: 100}}
+                  source={{uri: this.props.beerPhoto}}
+                />
+
+
+
+                <Text style={{marginTop: 25, marginBottom: 20}}>{this.props.BeerDescription}</Text>
+
+                <Text>KegSizeLiters: {this.props.KegSizeLiters}</Text>
+                <Text>litersUsed: {this.props.litersUsed}</Text>
+
+                <Text>kegTemp: {this.props.kegTemp}</Text>
               </Body>
             </Left>
           </CardItem>
 
-          <CardItem>
-            <Body>
-              <Image
-                source={{uri: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.brewpalacekegbot.com%2Fstatic%2Fimages%2Fkeg%2Ffull%2Fkeg-srm14-3.png&f=1'}}
-                style={styles.image}/>
-              <Text>
-                //Your text here
-              </Text>
-            </Body>
-          </CardItem>
+
 
           <CardItem>
             <Left>
-              <Button transparent textStyle={{color: '#87838B'}}>
+              <Button style={{ marginLeft: 20, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}>
                 <Icon name="beer" />
-                <Text>1,926 stars</Text>
+                <Text>Delete Keg</Text>
               </Button>
             </Left>
+            <Right>
+              <Button  style={{ backgroundColor: '#34A34F', marginLeft: 0, marginBottom: 20, marginTop: 20,}} textStyle={{color: '#87838B'}}>
+                <Icon name="beer" />
+                <Text>Change Keg</Text>
+              </Button>
+            </Right>
           </CardItem>
         </Card>
-        </Content>
 
     );
   }
@@ -74,7 +65,7 @@ const styles = StyleSheet.create({
     // flexGrow:1,
     height:200,
     width: 200,
-    marginLeft: 40,
+    marginLeft: 60,
     marginTop: 20,
     // width:null,
   },
