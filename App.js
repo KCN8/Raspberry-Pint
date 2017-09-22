@@ -6,8 +6,6 @@ import Header from './components/Header';
 import Main from './components/Main'
 import OnTap from './components/OnTap'
 import Contact from './components/Contact'
-import Bubbles from './components/Bubbles'
-import Expo from 'expo';
 
 const brewsURL = 'https://raspberry-pint-api.herokuapp.com'
 
@@ -18,6 +16,7 @@ export default class App extends Component {
     this.state = {
       index: 0,
       beers: [],
+
      };
   }
 
@@ -26,16 +25,18 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(`${brewsURL}/beers`)
-    const json = await response.json()
-    this.setState({beers: json})
+    const beerResponse = await fetch(`${brewsURL}/beers`)
+    const beerJSON = await beerResponse.json()
+    this.setState({beers: beerJSON})
 
-    await Expo.Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf")
-    });
+
+
+    Expo.Font.loadAsync({
+    'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
+  });
 }
+
+
 
   render() {
 
@@ -47,8 +48,6 @@ export default class App extends Component {
         AppComponent = <OnTap beers={this.state.beers}/>
       } else if (this.state.index == 2) {
         AppComponent = <Contact />
-      } else if (this.state.index == 3) {
-        AppComponent = <KegStatus />
       }
 
     return (
@@ -63,11 +62,11 @@ export default class App extends Component {
               </Button>
               <Button vertical onPress={() => this.switchScreen(1) }>
                 <Icon name="ios-beer" />
-                <Text>Beer</Text>
+                <Text>My Keg(s)</Text>
               </Button>
               <Button vertical onPress={() => this.switchScreen(2) }>
                 <Icon active name="ios-contact" />
-                <Text>Contact</Text>
+                <Text>Info</Text>
               </Button>
             </FooterTab>
           </Footer>
