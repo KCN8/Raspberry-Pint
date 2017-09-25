@@ -32,11 +32,9 @@ export default class App extends Component {
 
 
 
-    await Expo.Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
-      Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf")
-    });
+    Expo.Font.loadAsync({
+    'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
+  });
 }
 
 

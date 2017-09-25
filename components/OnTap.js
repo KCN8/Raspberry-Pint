@@ -13,6 +13,7 @@ const baseURL = 'https://raspberry-pint-api.herokuapp.com'
      active: false,
      kegAndBeer: []
    }
+   this.newBeer = this.newBeer.bind(this);
  }
 
    async componentDidMount(){
@@ -21,11 +22,16 @@ const baseURL = 'https://raspberry-pint-api.herokuapp.com'
      this.setState({kegAndBeer: kegAndBeerJSON})
    }
 
+ newBeer (newBeer) {
+   console.log(newBeer);
+   let beer = this.state.kegAndBeer
+   beer.push(newBeer)
+   this.setState({kegAndBeer: beer})
+ }
  setCurrentReadOffset = (event) => {
    let itemHeight = 402;
    let currentOffset = Math.floor(event.nativeEvent.contentOffset.y);
    let currentItemIndex = Math.ceil(currentOffset / itemHeight);
-   // this.state.dataset.setReadOffset(currentItemIndex);
  }
 
  deleteKeg(id) {
@@ -56,7 +62,7 @@ const baseURL = 'https://raspberry-pint-api.herokuapp.com'
                return(<KegList deleteKeg={this.deleteKeg.bind(this)} key={kegWithItsBeer.id} BeerID={kegWithItsBeer.beer_id} BeerDescription={kegWithItsBeer.description} KegID={kegWithItsBeer.id} KegSizeLiters={kegWithItsBeer.keg_size_liters} litersUsed={kegWithItsBeer.liters_used} beerName={kegWithItsBeer.name} beerPhoto={kegWithItsBeer.photo}  servingTemp={kegWithItsBeer.serving_temp}  kegTemp={kegWithItsBeer.temperature}/>);
            })}
        </Content>
-      <AddButton beers={this.props.beers}/>
+      <AddButton beers={this.props.beers} newBeer={this.newBeer}/>
     </Container>
    );
  }
