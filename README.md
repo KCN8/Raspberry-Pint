@@ -1,7 +1,10 @@
-![RPInt Logo](assets/logo.png)
+!![RPInt Logo](assets/logo.png)
 # Raspberry-Pint
 A mobile app that monitors the level of your keg, temperature, and will show details of the beer you're drinking. With just a click you can see all the details of the beer or you can see what the temperature of you keg is at as well as how full your keg is.
 
+## API
+- https://github.com/KCN8/Raspberry-Pint-RPI-Software
+- https://github.com/KCN8/Raspberry-Pint-API
 
 ## Future Plans
 - HardWare to work
@@ -23,6 +26,10 @@ A mobile app that monitors the level of your keg, temperature, and will show det
 - Blood
 - Sweat
 - Tears
+
+## Screenshots
+<img src="assets/Home_page.png" width="160"> <img src="assets/Kegs.png" width="160">
+<img src="assets/Keg_stats.png" width="160"> <img src="assets/Contact.png" width="160">
 
 ## Mockups
 <img src="assets/Home.png" width="160"> <img src="assets/Kegs on tap.png" width="160">
