@@ -1,4 +1,4 @@
-!![RPInt Logo](assets/logo.png)
+![RPInt Logo](assets/logo.png)
 # Raspberry-Pint
 A mobile app that monitors the level of your keg, temperature, and will show details of the beer you're drinking. With just a click you can see all the details of the beer or you can see what the temperature of you keg is at as well as how full your keg is.
 
